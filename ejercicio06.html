@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+</head>
+<body>
+    <button onclick="sortList()">Clasificar Arreglo</button>
+    <ul id="par">
+        <strong>Pares</strong>
+    </ul>
+    <ul id="impar">
+        <strong>Impares</strong>
+    </ul>
+    <ul id="string">
+        <strong>Strings</strong>
+    </ul>
+    <script>
+        var arr = [1,'dos','tres',4,5,6,'siete',8,9,'diez'];
+
+        var sortList = function(){
+          for (var i = 0; i < arr.length; i += 1){
+            // if (typeof arr[i] == 'string') {
+            //   var doc_element = document.createElement("li");
+            //   node = document.createTextNode(x);
+            //   doc_element.appendChild(node);
+            //   parent_tag = document.getElementById('string');
+            //   parent_tag.appendChild(doc_element);
+            // }
+            console.log(typeof arr[i]);
+            if (typeof arr[i] === 'string'){
+              console.log("ES ARRAYYYY");
+              var doc_element = document.createElement("li");
+              node = document.createTextNode(arr[i]);
+              doc_element.appendChild(node);
+              parent_tag = document.getElementById('string');
+              parent_tag.appendChild(doc_element);
+            } else if (arr[i] % 2 == 0) {
+              var doc_element = document.createElement("li");
+              node = document.createTextNode(arr[i]);
+              doc_element.appendChild(node);
+              parent_tag = document.getElementById('par');
+              parent_tag.appendChild(doc_element);
+            } else {
+              var doc_element = document.createElement("li");
+              node = document.createTextNode(arr[i]);
+              doc_element.appendChild(node);
+              parent_tag = document.getElementById('impar');
+              parent_tag.appendChild(doc_element);
+            }
+          }
+        }
+    </script>
+</body>
+</html>
